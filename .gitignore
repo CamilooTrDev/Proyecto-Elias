@@ -1,0 +1,32 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Editor de código
+.vscode/
+.idea/
+
+# Archivos de configuración LOCAL (nunca subas contraseñas)
+.env
+config.php
+*.local.php
+
+# Logs
+*.log
+error_log
+
+# Cache de PHP
+*.cache
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+
+# Si usas Composer (gestor de dependencias PHP)
+/vendor/
+composer.lock
+
+# Si usas XAMPP/WAMP/MAMP
+*.sql
+*.sqlite
