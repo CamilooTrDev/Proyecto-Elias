@@ -1060,7 +1060,7 @@
 
 .service-diff h4, .service-faq-wrap h4 {
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 19px;
   margin-bottom: 16px;
 }
 
@@ -1085,27 +1085,38 @@
 .service-faq {
   border: 1px solid #E4E7ED;
   margin-bottom: 10px;
+  transition: all 0.3s ease;
 }
 
 .service-faq summary {
   padding: 14px 18px;
   font-weight: 700;
-  font-size: 13px;
-  color: #2B2D42;
+  font-size: 16px;
+  color: #000;
   cursor: pointer;
   list-style: none;
   background: #f7f7f9;
   text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease;
+  position: relative;
 }
 
 .service-faq summary::-webkit-details-marker {
   display: none;
 }
 
+.service-faq[open] summary::after {
+  transform: rotate(180deg);
+}
+
 .service-faq[open] summary {
-  background: #a06e3b;
-  color: #FFF;
+  background: #f7f7f9;
+  color: #a06e3b;
   text-transform: uppercase;
+}
+
+.service-faq[open] summary::after {
+  color: #FFF;
 }
 
 .service-faq .faq-body {
@@ -1113,6 +1124,19 @@
   font-size: 13px;
   color: #5B6472;
   line-height: 1.75;
+  animation: fadeSlideIn 0.4s ease;
+}
+
+/* Animación de entrada para el contenido */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*----------------------------*\

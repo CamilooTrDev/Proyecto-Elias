@@ -101,6 +101,22 @@
 			$li.toggleClass('open', !wasOpen);
 		});
 		});
+
+		document.addEventListener('DOMContentLoaded', function() {
+			const details = document.querySelectorAll('.service-faq-wrap details');
+			
+			details.forEach(function(detail) {
+				detail.addEventListener('toggle', function() {
+					if (this.open) {
+						details.forEach(function(otherDetail) {
+							if (otherDetail !== detail && otherDetail.open) {
+								otherDetail.open = false;
+							}
+						});
+					}
+				});
+			});
+		});
 		</script>
 
 	</body>
